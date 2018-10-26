@@ -6,4 +6,10 @@ module.exports = (app) => {
             resp.json(retorno);
         });
     });
+
+    app.route("/usuario/salvar").post((req, resp) => {
+        dao.salvar(req.body, () => {
+            resp.json({});
+        });
+    });
 }
