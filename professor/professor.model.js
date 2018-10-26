@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 console.log("commit pra testar o git")
 
 var schemaProfessor = new Schema ({
-    nome : String
+    nome : String,
+    email : String
 });
 
 module.exports = mongoose.model("Professor", schemaProfessor);
