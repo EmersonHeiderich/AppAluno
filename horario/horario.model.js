@@ -6,11 +6,7 @@ var schemaHorario = new Schema ({
     horaTermino : Date,
     localTipo : String,
     localNumero : Number,
-    diaSemana : String,
-    disciplina : {
-        type : Types.ObjectId,
-        ref : 'Disciplina'
-    }
+    diaSemana : String
 });
 
 module.exports = mongoose.model("Horario", schemaHorario);

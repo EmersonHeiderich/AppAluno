@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const Type = mongoose.Schema.Types
+
 var schemaTrabalho = new Schema ({
     titulo : String,
     descricao : String,
@@ -10,7 +12,7 @@ var schemaTrabalho = new Schema ({
     notaRecebida : Number,
     status : Number,
     disciplina : {
-        type : Types.ObjectId,
+        type : Type.ObjectId,
         ref : 'Disciplina'
     }
 });

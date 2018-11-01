@@ -1,25 +1,24 @@
 const mongoose = require('mongoose');
-const Semestre = require('./semestre.model');
+const Curso = require('./curso');
 const db = require('../db/db');
 
 module.exports = {
-
-    salvar : (semestre, fnCallback) => {
+    salvar : (curso, fnCallback) => {
         db.connect();
 
-        let s = new Semestre(semestre);
+        let c = new Curso(curso);
 
-        s.save ((e, res) => {
+        c.save ((e, res) => {
             db.disconnect();
             fnCallback(res);
         });
-    },  
-
-    listar : (semestre, fnCallback) => {
+    },
+    
+    consultar : (fnCallback) => {
         db.connect();
 
-        let q = Semestre.find({});
-        q.exec( (e, res) => {
+        let c = new Curso(curso);
+        Curso.find((e, res) => {
             db.disconnect();
             fnCallback(res);
         });

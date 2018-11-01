@@ -1,5 +1,5 @@
 const express = require('express');
-const wsUsuario = require('./usuario/usuario.ws');
+const wsAluno = require('./aluno/aluno.ws');
 
 const app = express();
 
@@ -12,7 +12,7 @@ app.use((req, res, next) => {
     next();
   });
 
-wsUsuario(app);
+wsAluno(app);
 
 app.listen(3000, () => {//arrow function
     console.log("server 3000");

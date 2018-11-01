@@ -8,8 +8,8 @@ module.exports = (app) => {
         });
     });
 
-    app.route("/post/listar").get((req, resp) => {            
-        dao.listar((result) => {
+    app.route("/professor/listar").get((req, resp) => {            
+        dao.consultar((result) => {
             resp.json(result);
         });
     });
